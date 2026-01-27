@@ -1,0 +1,20 @@
+services:
+  dev:
+    image: mcr.microsoft.com/devcontainers/javascript-node:0-18-bullseye
+    container_name: test_dev
+    # volumes:
+    #   # Bump version here and in volumes if new image requires new db.
+    #   - farmos3_db_fd2.1:/workspaces/FarmData2/docker/db
+    #   - /var/run/docker.sock:/var/run/docker.sock
+    command: sleep infinity
+    # ports:
+    #   - 6901:6901 # for the noVNC in desktop-lite
+
+  http:
+    image: httpd:latest
+    container_name: web_server
+    volumes:
+       - ../site/:/usr/local/apache2/htdocs/
+    ports:
+      - 80:80
+  

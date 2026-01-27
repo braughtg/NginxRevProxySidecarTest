@@ -1,0 +1,29 @@
+{
+  "name": "RevProxyTest",
+  "dockerComposeFile": "compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspaces/NginxRevProxySidecarTest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    // "ghcr.io/devcontainers/features/desktop-lite:1": {
+    //   "password": "noPassword",
+    //   "webPort": "6901",
+    //   "vncPort": "5901"
+    // }
+  },
+  "postAttachCommand": "sudo chgrp docker /var/run/docker.sock",
+  "remoteEnv": {
+    "DOCKER_API_VERSION": "1.43"
+  },
+  "mounts": [
+    "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock"
+  ],
+  "forwardPorts": [80],
+  "portsAttributes": {
+    "80": {
+      "label": "http",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    }
+  }
+}
