@@ -15,9 +15,6 @@
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "mounts": [
-    "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock"
-  ],
   "forwardPorts": [80],
   "portsAttributes": {
     "80": {
