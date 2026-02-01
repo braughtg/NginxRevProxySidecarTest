@@ -1,7 +1,7 @@
 services:
   dev:
     image: mcr.microsoft.com/devcontainers/javascript-node:0-18-bullseye
-    #container_name: test_dev
+    container_name: test_dev
     volumes:
     #   # Bump version here and in volumes if new image requires new db.
     #   - farmos3_db_fd2.1:/workspaces/FarmData2/docker/db
@@ -12,18 +12,19 @@ services:
 
   farmos:
     image: httpd:latest
-    #container_name: web_server
+    container_name: web_server
     volumes:
        - ../site/:/usr/local/apache2/htdocs/
-    ports:
-      - 80:80
+    #ports:
+    #  - 80:80
   
   proxy:
     image: nginx
-    #container_name: rev_proxy
+    container_name: rev_proxy
     depends_on:
       - farmos
     ports:
+      - '80:80'
       - '443:443'
     volumes:
       - './nginx.conf:/etc/nginx/nginx.conf'
