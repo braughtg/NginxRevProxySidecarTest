@@ -11,23 +11,27 @@
     //   "vncPort": "5901"
     // }
   },
+  "initializeCommand": "./.devcontainer/initialize.bash",
   "onCreateCommand": "./.devcontainer/onCreate.bash",
   "postCreateCommand": "./.devcontainer/postCreate.bash",
   "postAttachCommand": "./.devcontainer/postAttach.bash",
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [80, 443],
+  "forwardPorts": [443],
   "portsAttributes": {
-    "80": {
-      "label": "http",
-      "protocol": "http",
-      "onAutoForward": "silent"
-    },
+    // "80": {
+    //   "label": "http",
+    //   "protocol": "http",
+    //   "onAutoForward": "silent"
+    // },
     "443": {
-      "label": "https",
+      "label": "proxy",
       "protocol": "https",
       "onAutoForward": "silent"
     }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
   }
 }
