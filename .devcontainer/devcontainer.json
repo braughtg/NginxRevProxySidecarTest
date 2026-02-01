@@ -11,15 +11,22 @@
     //   "vncPort": "5901"
     // }
   },
-  "postAttachCommand": "sudo chgrp docker /var/run/docker.sock",
+  "onCreateCommand": "./.devcontainer/onCreate.bash",
+  "postCreateCommand": "./.devcontainer/postCreate.bash",
+  "postAttachCommand": "./.devcontainer/postAttach.bash",
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [80],
+  "forwardPorts": [80, 443],
   "portsAttributes": {
     "80": {
       "label": "http",
       "protocol": "http",
+      "onAutoForward": "silent"
+    },
+    "443": {
+      "label": "https",
+      "protocol": "https",
       "onAutoForward": "silent"
     }
   }
