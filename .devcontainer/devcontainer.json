@@ -17,21 +17,21 @@
   "postAttachCommand": "./.devcontainer/postAttach.bash",
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
-  },
-  "forwardPorts": [8443],
-  "portsAttributes": {
-    // "80": {
-    //   "label": "http",
-    //   "protocol": "http",
-    //   "onAutoForward": "silent"
-    // },
-    "8443": {
-      "label": "proxy",
-      "protocol": "https",
-      "onAutoForward": "silent"
-    }
-  },
-  "otherPortsAttributes": {
-    "onAutoForward": "ignore"
   }
+  // //"forwardPorts": [8443],
+  // "portsAttributes": {
+  //   // "80": {
+  //   //   "label": "http",
+  //   //   "protocol": "http",
+  //   //   "onAutoForward": "silent"
+  //   // },
+  //   // "8443": {
+  //   //   "label": "proxy",
+  //   //   "protocol": "https",
+  //   //   "onAutoForward": "silent"
+  //   // }
+  // },
+  // "otherPortsAttributes": {
+  //   "onAutoForward": "silent"
+  // }
 }
