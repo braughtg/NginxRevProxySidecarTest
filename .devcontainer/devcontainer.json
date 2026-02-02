@@ -18,14 +18,14 @@
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [8443],
+  "forwardPorts": [443],
   "portsAttributes": {
     // "80": {
     //   "label": "http",
     //   "protocol": "http",
     //   "onAutoForward": "silent"
     // },
-    "8443": {
+    "443": {
       "label": "proxy",
       "protocol": "https",
       "onAutoForward": "silent"
