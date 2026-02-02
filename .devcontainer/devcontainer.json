@@ -4,36 +4,29 @@
   "service": "dev",
   "workspaceFolder": "/workspaces/NginxRevProxySidecarTest",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-    // "ghcr.io/devcontainers/features/desktop-lite:1": {
-    //   "password": "noPassword",
-    //   "webPort": "6901",
-    //   "vncPort": "5901"
-    // }
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "noPassword",
+      "webPort": "6901",
+      "vncPort": "5901"
+    }
   },
-  //"initializeCommand": "./.devcontainer/initialize.bash",
-  //"onCreateCommand": "./.devcontainer/onCreate.bash",
   "postCreateCommand": "./.devcontainer/postCreate.bash",
   "postAttachCommand": "./.devcontainer/postAttach.bash",
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  // "forwardPorts": [32768],
-  // "portsAttributes": {
-  //   // "80": {
-  //   //   "label": "http",
-  //   //   "protocol": "http",
-  //   //   "onAutoForward": "silent"
-  //   // },
-  //   "32768": {
-  //     "label": "proxy",
-  //     "protocol": "https",
-  //     "onAutoForward": "silent"
-  //   }
-  // },
+  "portsAttributes": {
+    "6901": {
+      "label": "noVNC",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    }
+  },
   "otherPortsAttributes": {
-      "onAutoForward": "notify",
-      "protocol": "https"
+    "label": "farmOS",
+    "protocol": "https",
+    "onAutoForward": "silent"
   },
   "customizations": {
     "vscode": {
