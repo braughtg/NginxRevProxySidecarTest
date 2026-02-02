@@ -18,20 +18,21 @@
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [32768],
-  "portsAttributes": {
-    // "80": {
-    //   "label": "http",
-    //   "protocol": "http",
-    //   "onAutoForward": "silent"
-    // },
-    "32768": {
-      "label": "proxy",
-      "protocol": "https",
-      "onAutoForward": "silent"
-    }
-  },
+  // "forwardPorts": [32768],
+  // "portsAttributes": {
+  //   // "80": {
+  //   //   "label": "http",
+  //   //   "protocol": "http",
+  //   //   "onAutoForward": "silent"
+  //   // },
+  //   "32768": {
+  //     "label": "proxy",
+  //     "protocol": "https",
+  //     "onAutoForward": "silent"
+  //   }
+  // },
   "otherPortsAttributes": {
-      "onAutoForward": "ignore"
+      "onAutoForward": "notify",
+      "protocol": "https"
   }
 }
