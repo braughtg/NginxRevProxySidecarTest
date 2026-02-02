@@ -11,8 +11,8 @@
     //   "vncPort": "5901"
     // }
   },
-  "initializeCommand": "./.devcontainer/initialize.bash",
-  "onCreateCommand": "./.devcontainer/onCreate.bash",
+  //"initializeCommand": "./.devcontainer/initialize.bash",
+  //"onCreateCommand": "./.devcontainer/onCreate.bash",
   "postCreateCommand": "./.devcontainer/postCreate.bash",
   "postAttachCommand": "./.devcontainer/postAttach.bash",
   "remoteEnv": {
@@ -34,5 +34,13 @@
   "otherPortsAttributes": {
       "onAutoForward": "notify",
       "protocol": "https"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": true,
+        "remote.autoForwardPortsSource": "hybrid"
+      }
+    }
   }
 }
