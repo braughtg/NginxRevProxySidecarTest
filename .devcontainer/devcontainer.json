@@ -34,11 +34,9 @@
       "onAutoForward": "silent"
     }
   },
-  // "otherPortsAttributes": {
-  //   "label": "farmOS",
-  //   "protocol": "https",
-  //   "onAutoForward": "silent"
-  // },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
   "customizations": {
     "vscode": {
       "settings": {
