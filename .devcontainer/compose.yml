@@ -21,8 +21,8 @@ services:
   proxy:
     image: nginx
     container_name: rev_proxy
-    depends_on:
-      - farmos
+    # depends_on:
+    #   - farmos
     ports:
       #- '80:80'
       - '443'
