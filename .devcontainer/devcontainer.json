@@ -16,7 +16,7 @@
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [6901],
+  // "forwardPorts": [6901],
   "portsAttributes": {
     "6901": {
       "label": "noVNC",
