@@ -16,26 +16,18 @@
   "remoteEnv": {
     "DOCKER_API_VERSION": "1.43"
   },
-  "forwardPorts": [6901, "farmos:80", "proxy:443"],
+  "forwardPorts": [6901],
   "portsAttributes": {
     "6901": {
       "label": "noVNC",
       "protocol": "http",
       "onAutoForward": "silent"
-    },
-    "farmos:80": {
-      "label": "http",
-      "protocol": "http",
-      "onAutoForward": "silent"
-    },
-    "proxy:443": {
-      "label": "https",
-      "protocol": "https",
-      "onAutoForward": "silent"
     }
   },
   "otherPortsAttributes": {
-    "onAutoForward": "ignore"
+    "label": "farmOS",
+    "protocol": "https",
+    "onAutoForward": "silent"
   },
   "customizations": {
     "vscode": {
